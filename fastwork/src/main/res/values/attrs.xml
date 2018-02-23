@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ConvenientBanner">
+        <attr name="canLoop" format="boolean" />
+    </declare-styleable>
+
+
+    <!-- titleBar 自定义的属性 -->
+    <declare-styleable name="CustomTitleBar">
+
+        <attr name="leftBtnText" format="string|reference" />
+        <attr name="leftBtnTextSize" format="dimension|reference" />
+        <attr name="leftBtnTextColor" format="color|reference" />
+        <attr name="leftBtnImage" format="color|reference" />
+
+        <attr name="titleText" format="string|reference" />
+        <attr name="titleSize" format="dimension|reference" />
+        <attr name="titleColor" format="color|reference" />
+
+        <attr name="rightBtnText" format="string|reference" />
+        <attr name="rightBtnTextSize" format="dimension|reference" />
+        <attr name="rightBtnTextColor" format="color|reference" />
+        <attr name="rightBtnImage" format="color|reference" />
+
+    </declare-styleable>
+
+    <declare-styleable name="PercentLayout_Layout">
+        <attr name="layout_widthPercent" format="string" />
+        <attr name="layout_heightPercent" format="string" />
+
+        <attr name="layout_marginPercent" format="string" />
+        <attr name="layout_marginLeftPercent" format="string" />
+        <attr name="layout_marginTopPercent" format="string" />
+        <attr name="layout_marginRightPercent" format="string" />
+        <attr name="layout_marginBottomPercent" format="string" />
+        <attr name="layout_marginStartPercent" format="string" />
+        <attr name="layout_marginEndPercent" format="string" />
+
+        <attr name="layout_textSizePercent" format="string" />
+
+        <attr name="layout_maxWidthPercent" format="string" />
+        <attr name="layout_maxHeightPercent" format="string" />
+        <attr name="layout_minWidthPercent" format="string" />
+        <attr name="layout_minHeightPercent" format="string" />
+
+        <attr name="layout_paddingPercent" format="string" />
+        <attr name="layout_paddingTopPercent" format="string" />
+        <attr name="layout_paddingBottomPercent" format="string" />
+        <attr name="layout_paddingLeftPercent" format="string" />
+        <attr name="layout_paddingRightPercent" format="string" />
+    </declare-styleable>
+
+
+</resources>
