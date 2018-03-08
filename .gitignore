@@ -1,5 +1,6 @@
 .gradle
 /local.properties
+.idea/misc.xml
 /.idea/workspace.xml
 /.idea/libraries
 /.idea
@@ -16,7 +17,7 @@
 # Files for the Dalvik VM
 *.dex
 
-# Java class files
+# Java class filesd
 *.class
 
 # Generated files

@@ -16,7 +16,7 @@ public class Text {
     }
 
     /**
-     * 通过Field反射的各方法访问属性
+     * 通过Field反射的方法访问属性
      */
     private static void getAttributeName() {
 

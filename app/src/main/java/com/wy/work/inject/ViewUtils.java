@@ -49,6 +49,10 @@ public class ViewUtils {
     }
 
 
+
+    /**
+     * 通过ctx.getClass（）得到实体类。然后得到这个类中所有的注解跟ViewInject注解类匹配。如果匹配成功，则set（ctx,ctx.findById()）；
+     * */
     private void autoInjectAllField(){
 
         Class clazz = activity.getClass();
@@ -61,6 +65,7 @@ public class ViewUtils {
 
             if (field.isAnnotationPresent(ViewInject.class)){
 
+                //返回改程序元素上存在的、指定类型的注解，如果该类型注解不存在，则返回null。
                 ViewInject viewInject = field.getAnnotation(ViewInject.class);
 
                 int id = viewInject.value();
