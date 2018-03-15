@@ -25,6 +25,12 @@
             android:onClick="loginDialogFragment"
             android:text="loginDialogFragment" />
 
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="otherActivity"
+            android:text="OTHER_ACTIVITY" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

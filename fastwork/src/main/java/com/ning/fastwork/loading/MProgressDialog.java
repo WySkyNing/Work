@@ -7,6 +7,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.WindowManager;
@@ -148,6 +149,12 @@ public class MProgressDialog implements View.OnClickListener {
             if (mBuilder.dialogDismissListener != null) {
                 mBuilder.dialogDismissListener.dismiss();
             }
+        }
+
+        if (mDialog == null){
+            Log.e("wy__dialog","null");
+        }else {
+            Log.e("wy__dialog","noNull");
         }
     }
 

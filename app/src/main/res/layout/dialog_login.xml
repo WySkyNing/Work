@@ -34,4 +34,16 @@
         android:hint="input password"
         android:inputType="textPassword" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showDialog"
+        android:text="showDialog"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="dismissDialog"
+        android:text="dismissDialog"/>
+
 </LinearLayout>
