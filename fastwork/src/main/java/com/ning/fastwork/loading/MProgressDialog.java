@@ -150,12 +150,6 @@ public class MProgressDialog implements View.OnClickListener {
                 mBuilder.dialogDismissListener.dismiss();
             }
         }
-
-        if (mDialog == null){
-            Log.e("wy__dialog","null");
-        }else {
-            Log.e("wy__dialog","noNull");
-        }
     }
 
     public void showWithProgress() {

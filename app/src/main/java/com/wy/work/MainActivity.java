@@ -6,15 +6,18 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.ning.fastwork.net.bass.NetworkUtil;
 import com.wy.work.bean.LoginBean;
+import com.wy.work.bean.LoginBean01;
 import com.wy.work.dialog.LoginDialogFragment;
 import com.wy.work.dialog.SetNameDialogFragment;
+import com.wy.work.encryption.AES;
+import com.wy.work.encryption.EncryptionUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,15 +35,16 @@ public class MainActivity extends AppCompatActivity implements LoginDialogFragme
 //        jsonObject.put("uuid", DeviceUtil.getDeviceId(this));
 //        jsonObject.put("version",DeviceUtil.getVersionName(this));
 //        jsonObject.put("os","Android");
-        Map<String,String> map = new HashMap<>();
 
+        Map<String,String> map = new HashMap<>();
         map.put("login","18842606495");
         map.put("password","123456");
 
-        NetworkUtil.getInstance().postRequest(this, "http://47.96.20.53/app/account/login",map, new NetworkUtil.RequestCallBack() {
+        NetworkUtil.getInstance().postRequest(this, "http://47.96.20.53/app/account/login",map, new NetworkUtil.RequestCallBack<LoginBean01>() {
             @Override
-            public void onResponse(Object response) {
+            public void onResponse(LoginBean01 response) {
 
+                Log.e("wy_LoginBean01",response.getToken());
             }
 
             @Override
@@ -48,8 +52,6 @@ public class MainActivity extends AppCompatActivity implements LoginDialogFragme
 
             }
         });
-
-
 
 
 
@@ -80,27 +82,28 @@ public class MainActivity extends AppCompatActivity implements LoginDialogFragme
             }
         });
 
-//        NetworkUtil.getInstance().showLoading(this);
+        NetworkUtil.getInstance().showLoading(this);
 
-//        Log.e("wy__base64_密文: ", EncryptionUtil.codeToBase64("待加密文字"));
-//
-//        Log.e("wy__base64_明文: ", EncryptionUtil.decodeToBase64("5b6F5Yqg5a+G5paH5a2X"));
-//
-//        Log.e("wy__md5_密文: ", EncryptionUtil.codeToMD5("待加密文字"));
-//
-//        String secretKey = EncryptionUtil.generateKey();
-//        String codeToAES = EncryptionUtil.codeToAES("key","aaaaaaaaaaaaaaaaaaaaaaaaaaa");
-//
-//        Log.e("wy__aes_密文: ", codeToAES);
-//
-//        Log.e("wy__aes_明文: ", EncryptionUtil.decodeToAes("key",codeToAES));
+        Log.e("wy__base64_密文: ", EncryptionUtil.codeToBase64("待加密文字"));
 
+        Log.e("wy__base64_明文: ", EncryptionUtil.decodeToBase64("5b6F5Yqg5a+G5paH5a2X"));
+
+        Log.e("wy__md5_密文: ", EncryptionUtil.codeToMD5("待加密文字"));
+
+        AES mAes = new AES();
+        String mString = "待加密文字";
+        String enString = null;
         try {
+            enString = mAes.encrypt(mString.getBytes("UTF-8"));
 
-
-        } catch (Exception e) {
+        } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
+
+        Log.e("wy_aes_密文:",enString);
+        String deString = mAes.decrypt(enString);
+        Log.e("wy_aes_明文:",deString);
+
     }
 
     public void setNameDialogFragment(View view) {
